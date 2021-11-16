@@ -1,3 +1,7 @@
+# Main file for NM Stem Challange model
+# Carlos Miller, Nov. 14 2021
+# v0.1
+
 from turtle import *
 from random import randint
 import numpy as np
