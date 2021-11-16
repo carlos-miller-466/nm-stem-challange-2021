@@ -1,6 +1,10 @@
-# Main file for NM Stem Challange model
-# Carlos Miller, Nov. 14 2021
-# v0.1
+"""
+NM Stem Challenge Model
+
+Author: Carlos Miller 
+Written on: Nov. 13 2021
+Version: 0.1 (Nov. 15 2021)
+"""
 
 from turtle import *
 from random import randint
