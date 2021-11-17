@@ -16,28 +16,29 @@ import time
 
 start = time.perf_counter()
 mode("logo")
-tracer(None,32)
+tracer(delay=32)
+
 
 class FermentationModel:
     def __init__(self):
-        
+
         # Carbon Dioxide
-        CO2 = Turtle()
-        CO2.ht()
-        CO2.shape("circle")
-        CO2.color("grey")
-        CO2.resizemode("user")    
-        CO2.shapesize(0.3, 0.3)
-        self.CO2 = [CO2]
+        co2 = Turtle()
+        co2.ht()
+        co2.shape("circle")
+        co2.color("grey")
+        co2.resizemode("user")
+        co2.shapesize(0.3, 0.3)
+        self.co2 = [co2]
 
         # Ethanol
-        Et = Turtle()
-        Et.ht()
-        Et.shape("circle")
-        Et.color("cyan")
-        Et.resizemode("user")
-        Et.shapesize(0.5,0.5)
-    
+        et = Turtle()
+        et.ht()
+        et.shape("circle")
+        et.color("cyan")
+        et.resizemode("user")
+        et.shapesize(0.5, 0.5)
+
     def collision_detection(self, tolerance, precision):
         positions = []
         dry_runs = 0
@@ -45,24 +46,24 @@ class FermentationModel:
             pickle.dump('THIS IS A PICKLE OF DATA', f_obj)
         while True:
             # Get X and Y positions
-            x_positions = [atom.xcor() for atom in self.CO2]
-            y_positions = [atom.ycor() for atom in self.CO2]
-            
+            x_positions = [atom.xcor() for atom in self.co2]
+            y_positions = [atom.ycor() for atom in self.co2]
+
             # Compare all X positions with a defined tolerance
             for a, b in itertools.combinations(x_positions, 2):
                 if a in np.arange(
-                    round((b - tolerance),precision),
-                    round((b + tolerance),precision),
-                    int('1'+'0'*precision)): 
-                        print("Collision!")
-            
+                        round((b - tolerance), precision),
+                        round((b + tolerance), precision),
+                        int('1' + '0' * precision)):
+                    print("Collision!")
+
             # Compare all Y positions with a defined tolerance
             for a, b in itertools.combinations(y_positions, 2):
                 if a in np.arange(
-                    round((b - tolerance),8),
-                    round((b + tolerance),8),
-                    int('1'+'0'*precision)): 
-                        print("Collision!")
+                        round((b - tolerance), 8),
+                        round((b + tolerance), 8),
+                        int('1' + '0' * precision)):
+                    print("Collision!")
 
             # Log positions
             positions.append((x_positions, y_positions))
@@ -80,20 +81,20 @@ class FermentationModel:
 
     def carbon_dioxide(self, amount):
 
-        self.CO2[0].speed(6)
-        self.CO2[0].st()
+        self.co2[0].speed(6)
+        self.co2[0].st()
         for _ in range(amount):
-            self.CO2.append(self.CO2[0].clone())
-        self.CO2[0].ht()
-        self.CO2[0].setpos(1000,1000)
+            self.co2.append(self.co2[0].clone())
+        self.co2[0].ht()
+        self.co2[0].setpos(1000, 1000)
 
         t1 = threading.Thread(target=self.collision_detection,
-                args=(2, 3))
+                              args=(2, 3))
 
         for x in range(25):
-            for c in self.CO2:
-                c.seth(randint(0,360))
-                mvm = randint(-50,50)
+            for c in self.co2:
+                c.seth(randint(0, 360))
+                mvm = randint(-50, 50)
                 if mvm == 0:
                     c.fd(1)
                 else:
@@ -101,13 +102,14 @@ class FermentationModel:
             if x == 1:
                 t1.start()
 
+
 Model = FermentationModel()
 Model.carbon_dioxide(10)
 done()
 
 finish = time.perf_counter()
 
-print("Executed in", str(round((finish-start),2)), "(s)")
+print("Executed in", str(round((finish - start), 2)), "(s)")
 
 """
 (1) C6H1206 -> 2 Et + 2 CO2, with 2 CO2 making up 25% of atoms "lost" during
@@ -133,16 +135,7 @@ sugar content. The process will be simulated as such:
     
 """
 
-
-
-
-
-
-
-
-
-
-#class Display:
+# class Display:
 #    def __init__(self):
 #        pass
 #    def execute(self):
