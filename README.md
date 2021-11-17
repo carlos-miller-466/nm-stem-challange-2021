@@ -1,2 +1,2 @@
-# nm-stem-challange-2021
-All project information and code pertaining to the NM Stem Challange of 2021.
+# nm-stem-challenge-2021
+All project information and code pertaining to the NM Stem Challenge of 2021.
