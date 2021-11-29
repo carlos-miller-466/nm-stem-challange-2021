@@ -6,16 +6,19 @@ Written on: Nov. 13 2021
 Version: 0.1 (Nov. 15 2021)
 """
 
-from turtle import *
 from random import randint
+from particle import Particle
 import numpy as np
+import turtle
 import itertools
 import pickle
 import threading
 import time
 
 start = time.perf_counter()
-
+test = Particle('test')
+test.move()
+turtle.done()
 finish = time.perf_counter()
 
 print("Executed in", str(round((finish - start), 2)), "(s)")
