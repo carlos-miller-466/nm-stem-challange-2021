@@ -1,4 +1,4 @@
-from model import *
+from data_management import *
 from data_gen import Data
 
 DATA = Data()
