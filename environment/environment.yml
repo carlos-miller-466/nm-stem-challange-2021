@@ -1,8 +1,0 @@
-name: universal39
-channels:
-  - defaults
-dependencies:
-  - python=3.9
-  - numpy
-  - matplotlib
-prefix: /home/carlos/anaconda3/envs/universal39
