@@ -1,6 +1,6 @@
 # STEM Model for 2021
 
-A Python model for graphing the data produced by our 2021 STEM prototype.
+Models for graphing the data produced by our 2021 STEM prototype and visualizing the collection method associated with our prototype.
 
 ## main.py
 All executable code (primarily graphing) can be run directly from here.
@@ -22,3 +22,6 @@ Environment file used for Conda to ensure all package requirements are met. If C
   * Python 3.9+
   * numpy
   * matplotlib
+
+## AliceModel.a3p
+The Alice model that visualizes the collection method of trash and food waste. Developed for Alice 3.6 and written by Izaiah Gonzales.
